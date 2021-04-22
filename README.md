@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Material-UI links
+
+### Theme defaults
+
+https://material-ui.com/customization/default-theme/
+
 ## Available Scripts
 
 In the project directory, you can run:
