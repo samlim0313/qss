@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/qss",
   siteMetadata: {
     title: `Q Shipping Solutions`,
     description: `A Math-based Maritime Software Company.`,
