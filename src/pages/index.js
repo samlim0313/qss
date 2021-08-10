@@ -1,6 +1,6 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import { Avatar, Backdrop, Box, Button, Card, CardActions, CardContent, CardHeader, Fade, Grid, IconButton, Modal, Typography } from '@material-ui/core';
+import { Avatar, Box, Card, CardContent, CardHeader, Grid, IconButton, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
 import { LinkedIn } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -47,12 +47,22 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '90%',
     overflow:'auto',
   },
+  video: {
+    position: 'relative',
+    paddingBottom: '56.25%', /* 16:9 */
+    height: 0,
+    '& iframe': {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+    }
+  },
 }));
 
 function IndexPage () {
   const classes = useStyles();
-  const [tanker, setTanker] = React.useState(false);
-  const [container, setContainer] = React.useState(false);
 
   return (
     <Layout>
@@ -74,7 +84,7 @@ function IndexPage () {
             <CardHeader title='Our Company' />
             <CardContent>
               <Typography>
-                We consult and develop software focused solely on the maritime industry. We primarily serve global container carriers and tanker shipping companies. Our solutions enable our clients to optimize ship-chartering and cargo-pricing decisions based on real-time market information, resulting in maximal revenue.
+                We develop customized decision-support software with a focus on the maritime industry, primarily shipping companies. Our solutions enable our clients to address critical operational problems (such as empty container repositioning, cargo pricing, etc.) based on real-time and historical data.
               </Typography>
             </CardContent>
           </Card>
@@ -84,78 +94,87 @@ function IndexPage () {
             <CardHeader title='Our Technology' />
             <CardContent>
               <Typography>
-                Mathematical modeling capability is what differentiates us. We help our clients frame and formulate their problems so that computer algorithms can find smart solutions that support data-driven business decisions. We tailor our solutions to the client's problems as well as their operating methods and fleet size. We ask the following questions to our potential clients. If you would like to discuss these types of issues and see if our services would help your business, please contact us.
+                Our approach to mathematical modeling differentiates us. Modeling enables large, complex problems to be framed and formulated so that computers can find optimal solutions that humans would’ve deemed unsolvable or resource consuming.
               </Typography>
             </CardContent>
-            <CardActions>
-              <Grid container spacing={1}>
-                <Grid item xs={12} sm={6}>
-                  <Button variant='outlined' style={{width: '100%'}} onClick={() => setTanker(!tanker)}>
-                    Tanker Shipping Clients
-                  </Button>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <Button variant='outlined' style={{width: '100%'}} onClick={() => setContainer(!container)}>
-                    Container Shipping Clients
-                  </Button>
-                </Grid>
-              </Grid>
-            </CardActions>
           </Card>
-          <Modal
-            aria-labelledby="transition-modal-title"
-            aria-describedby="transition-modal-description"
-            className={classes.modal}
-            open={tanker}
-            onClose={() => setTanker(false)}
-            closeAfterTransition
-            BackdropComponent={Backdrop}
-            BackdropProps={{
-              timeout: 500,
-            }}
-          >
-            <Fade in={tanker}>
-              <div className={classes.paper}>
-                <h2 id="transition-modal-title">For tanker shipping clients:</h2>
-                <p id="transition-modal-description">
-                  <ul>
-                    <li>Prior to making a fixture, how do you choose the trading region for the ship, such as AG, WAF, CARIB or UK/CONT? Do you consider only the ballasting distance and charter hire of a given cargo? Or do you also consider the supply and demand situation of the region? Is port condition - congestion or strike - a consideration?</li>
-                    <li>Do you rely solely on brokers for cargo information? Or do you have latest statistics for cargo at each port or on each route? Do you use such probability when you direct your ships to the next loading port?</li>
-                    <li>Do you factor potential follow-on cargo into your decision on the current charter?</li>
-                    <li>Do you price your charter based on the supply and demand condition of the loading port or of the route?</li>
-                    <li>On what basis do you distribute your ships over different regions? Do you have an optimal distribution tool based on supply and demand of the regions?</li>
-                    <li>Can you forecast the profit of your fleet based on different chartering policies?</li>
-                    <li>Are you outperforming the market? How do you measure your performance against the benchmark, if there is any?</li>
-                  </ul>
-                </p>
+        </Grid>
+        <Grid item xs={12} className={classes.spacing}>
+          <Card>
+            <CardHeader title='Problem Scope' />
+            <CardContent>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell></TableCell>
+                    <TableCell style={{textAlign: 'center'}}>Cost Management</TableCell>
+                    <TableCell style={{textAlign: 'center'}}>Revenue Management</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  <TableRow>
+                    <TableCell style={{textAlign: 'center', transform: 'rotate(180deg)', writingMode: 'vertical-lr'}}>Container and Cargo</TableCell>
+                    <TableCell>
+                      <ul>
+                        <li>Safety Stock, Supply/Demand Prediction</li>
+                        <li>Empty Container Repositioning</li>
+                      </ul>
+                    </TableCell>
+                    <TableCell>
+                      <ul>
+                        <li>Spot Cargo Pricing</li>
+                        <li>Long-term Contract Bid Pricing</li>
+                      </ul>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell style={{textAlign: 'center', transform: 'rotate(180deg)', writingMode: 'vertical-lr'}}>Vessel and Port</TableCell>
+                    <TableCell>
+                      <ul>
+                        <li>Ship Speed Optimization</li>
+                        <li>Refuel Locations</li>
+                        <li>Arrival/Berth/Departure Time Prediction</li>
+                        <li>Stowage Problem</li>
+                      </ul>
+                    </TableCell>
+                    <TableCell>
+                      <ul>
+                        <li>Routing/Scheduling [network optimization]</li>
+                        <li>Port dues (port operator’s problem)</li>
+                        <li>TC rate (tonnage provider’s problem)</li>
+                      </ul>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} className={classes.spacing}>
+          <Card>
+            <CardHeader title='Our Solutions' />
+            <CardContent>
+              <Typography paragraph>
+                Safety Stock
+              </Typography>
+              <Typography paragraph>
+                Ports must keep empty containers in storage to meet the demands of shippers. The optimal inventory level of empty containers meets all of shippers’ demands while minimizing cost of storage and leasing/owning containers. Too low of a level will miss potential revenue from shippers, and too high of a level will incur unnecessary spending.
+              </Typography>
+              <div className={classes.video}>
+                <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
-            </Fade>
-          </Modal>
-          <Modal
-            aria-labelledby="transition-modal-title"
-            aria-describedby="transition-modal-description"
-            className={classes.modal}
-            open={container}
-            onClose={() => setContainer(false)}
-            closeAfterTransition
-            BackdropComponent={Backdrop}
-            BackdropProps={{
-              timeout: 500,
-            }}
-          >
-            <Fade in={container}>
-              <div className={classes.paper}>
-                <h2 id="transition-modal-title">For container shipping clients:</h2>
-                <p id="transition-modal-description">
-                  <ul>
-                    <li>How do you measure supply and demand? Do you rely on broker research?</li>
-                    <li>How do you price your spot cargo? Do you factor in the current demand and supply condition of the market? Or do you price on a cost-plus-margin basis?</li>
-                    <li>Is your empty box repositioning and inventory management optimal? Is your policy updated periodically based on the market situation?</li>
-                  </ul>
-                </p>
+              <br/>
+              <Typography paragraph>
+                Empty Container Repositioning
+              </Typography>
+              <Typography paragraph>
+                Once an empty container has been returned by the shipper, shipping companies must relocate the container to locations with demand. Sometimes the cheapest relocation cost does not always result in maximum profit. A quicker but pricier relocation may lead to higher fulfillment and increased profit.
+              </Typography>
+              <div className={classes.video}>
+                <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
-            </Fade>
-          </Modal>
+            </CardContent>
+          </Card>
         </Grid>
         <Grid item xs={12} className={classes.spacing}>
           <Card>
