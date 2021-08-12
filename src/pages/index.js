@@ -161,7 +161,7 @@ function IndexPage () {
                 Ports must keep empty containers in storage to meet the demands of shippers. The optimal inventory level of empty containers meets all of shippers’ demands while minimizing cost of storage and leasing/owning containers. Too low of a level will miss potential revenue from shippers, and too high of a level will incur unnecessary spending.
               </Typography>
               <div className={classes.video}>
-                <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe src="https://www.youtube.com/embed/mb0gl0-e074" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
               <br/>
               <Typography paragraph>
@@ -171,7 +171,7 @@ function IndexPage () {
                 Once an empty container has been returned by the shipper, shipping companies must relocate the container to locations with demand. Sometimes the cheapest relocation cost does not always result in maximum profit. A quicker but pricier relocation may lead to higher fulfillment and increased profit.
               </Typography>
               <div className={classes.video}>
-                <iframe src="https://www.youtube.com/embed/NpEaa2P7qZI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe src="https://www.youtube.com/embed/9m60RZyWGe8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
             </CardContent>
           </Card>
