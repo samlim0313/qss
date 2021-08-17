@@ -106,14 +106,12 @@ function IndexPage () {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell></TableCell>
                     <TableCell style={{textAlign: 'center'}}>Cost Management</TableCell>
                     <TableCell style={{textAlign: 'center'}}>Revenue Management</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   <TableRow>
-                    <TableCell style={{textAlign: 'center', transform: 'rotate(180deg)', writingMode: 'vertical-lr'}}>Container and Cargo</TableCell>
                     <TableCell>
                       <ul>
                         <li>Safety Stock, Supply/Demand Prediction</li>
@@ -124,24 +122,6 @@ function IndexPage () {
                       <ul>
                         <li>Spot Cargo Pricing</li>
                         <li>Long-term Contract Bid Pricing</li>
-                      </ul>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell style={{textAlign: 'center', transform: 'rotate(180deg)', writingMode: 'vertical-lr'}}>Vessel and Port</TableCell>
-                    <TableCell>
-                      <ul>
-                        <li>Ship Speed Optimization</li>
-                        <li>Refuel Locations</li>
-                        <li>Arrival/Berth/Departure Time Prediction</li>
-                        <li>Stowage Problem</li>
-                      </ul>
-                    </TableCell>
-                    <TableCell>
-                      <ul>
-                        <li>Routing/Scheduling [network optimization]</li>
-                        <li>Port dues (port operator’s problem)</li>
-                        <li>TC rate (tonnage provider’s problem)</li>
                       </ul>
                     </TableCell>
                   </TableRow>
