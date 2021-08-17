@@ -2,5 +2,6 @@
   "main.js": "render-page.js",
   "render-page.js.map": "render-page.js.map",
   "static/bw_sam.jpg": "static/bw_sam-e38261a4842f0a1e1f043e156ea4cbff.jpg",
-  "static/bw_yj.jpg": "static/bw_yj-a830dfde90320a7bcfe1fe54a7b1213b.jpg"
+  "static/bw_yj.jpg": "static/bw_yj-a830dfde90320a7bcfe1fe54a7b1213b.jpg",
+  "static/q-shipping-solutions.png": "static/q-shipping-solutions-b796d9ae6c54a3bbb2990186a3de7c96.png"
 }
